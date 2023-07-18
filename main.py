@@ -1,5 +1,9 @@
 import csv
 import random
+from difflib import SequenceMatcher
+
+def similarity_between(first_str, second_str):
+    return SequenceMatcher(None, first_str, second_str).ratio()
 
 print("Hei hei / Welcome")
 
@@ -17,13 +21,16 @@ while True:
 
         while True:
             random_pick = random.choice(read_data)
-            word = random_pick["Word"]
+            word = random_pick["Word"].strip().lower()
+            meaning = random_pick["Meaning"].strip().lower()
             print(f"Hva er '{word}' på Engelsk?")
-            answer = input("Ditt svar: ")
-            if answer == word:
+            answer = input("Ditt svar: ").strip().lower()
+            if answer == meaning:
                 print("Utmerket!")
+            elif answer in meaning or similarity_between(answer,meaning) >= 0.8:
+                print(f"Great! It means '{meaning}'")  
             else:
-                print(f"Nei, det er '{random_pick['Meaning']}'")
+                print(f"Nei, det er '{meaning}'")
             continue_play = input("Continue? [y/n] ")
             if continue_play == "n":
                 break
@@ -50,3 +57,4 @@ while True:
     else:
         print("Invalid input! Only 1, 2 or 3 is accepted!")
         continue
+
