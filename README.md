@@ -1,4 +1,4 @@
-# Vocab Master - Master vocabulary with spaced repitition
+# Fitting new Norwegian words in my tiny brain
 This program only works on the terminal, no user interface has been developed yet.
 
 <h2>Get started</h2>
