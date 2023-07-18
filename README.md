@@ -25,5 +25,6 @@ You'll be asked to input the word first (in the language that you're learning), 
 
 <h2>Exit</h2>
 To exit the program, simply type 3.
-
-HAPPY LEARNING!
+<br>
+<br>
+<h1>HAPPY LEARNING!</h1>
