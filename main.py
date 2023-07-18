@@ -26,7 +26,7 @@ while True:
             print(f"Hva er '{word}' på Engelsk?")
             answer = input("Ditt svar: ").strip().lower()
             if answer == meaning:
-                print("Utmerket!")
+                print("Det stemmer!")
             elif answer in meaning or similarity_between(answer,meaning) >= 0.8:
                 print(f"Great! It means '{meaning}'")  
             else:
@@ -41,18 +41,18 @@ while True:
         with open("wordbank.csv","a",encoding="UTF-8",newline="") as csv_file_write:
             csv_writer = csv.writer(csv_file_write)
 
-        while True:
-            word = input("Word: ")
-            meaning = input("Meaning: ")
-            csv_writer.writerow([word,meaning])
-            continue_write = input("Continue? [y/n] ")
-            if continue_write == "n":
-                break
-            elif continue_write == "y":
-                continue
-            else:
-                print("------------- INPUT ERROR -------------")
-                print("Invalid input! Only y or n is accepted!")
+            while True:
+                word = input("Word: ")
+                meaning = input("Meaning: ")
+                csv_writer.writerow([word,meaning])
+                continue_write = input("Continue? [y/n] ")
+                if continue_write == "n":
+                    break
+                elif continue_write == "y":
+                    continue
+                else:
+                    print("------------- INPUT ERROR -------------")
+                    print("Invalid input! Only y or n is accepted!")
         continue
     elif mode == "3":
         print("Ha det bra!")
