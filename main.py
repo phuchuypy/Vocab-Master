@@ -48,13 +48,17 @@ while True:
             continue_write = input("Continue? [y/n] ")
             if continue_write == "n":
                 break
-            else:
+            elif continue_write == "y":
                 continue
+            else:
+                print("------------- INPUT ERROR -------------")
+                print("Invalid input! Only y or n is accepted!")
         continue
     elif mode == "3":
         print("Ha det bra!")
         break
     else:
+        print("------------- INPUT ERROR ----------------")
         print("Invalid input! Only 1, 2 or 3 is accepted!")
         continue
 
